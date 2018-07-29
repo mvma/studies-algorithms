@@ -57,7 +57,10 @@ function mergeSort(arr) {
     let left = arr.slice(0, center);
     let right = arr.slice(center);
 
-    return merge(mergeSort(left), mergeSort(right));
+    left  = mergeSort(left);
+    right = mergeSort(right);
+
+    return merge(left, right);
 }
 
 function merge(left, right) {
